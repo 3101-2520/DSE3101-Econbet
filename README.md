@@ -182,3 +182,28 @@ This will generate a `dist/` folder containing the optimized, minified applicati
 ```bash
 npm run preview
 ```
+
+---
+
+## Docker Deployment
+
+If you prefer to run the application using Docker, a `Dockerfile` is provided. This is useful for ensuring a consistent environment or if the application is too large for standard free-tier hosting.
+
+### 1. Build the Docker Image
+From the root directory, run:
+```bash
+docker build -t econbet-terminal .
+```
+
+### 2. Run the Container
+To run the container and map it to port 3000 on your machine:
+```bash
+docker run -p 3000:3000 econbet-terminal
+```
+
+### 3. Running the Backend inside Docker
+If you need to refresh the data inside the running container (requires your `FRED_API_KEY` to be passed as an environment variable):
+```bash
+docker run -p 3000:3000 -e FRED_API_KEY=your_key_here econbet-terminal bash -c "npm run backend && npm run preview -- --port 3000 --host 0.0.0.0"
+```
+

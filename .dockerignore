@@ -1,0 +1,9 @@
+node_modules
+dist
+backend/__pycache__
+.env
+.git
+metadata.json
+*.pyc
+.DS_Store
+__MACOSX
