@@ -1,9 +1,14 @@
 node_modules
 dist
+build
 backend/__pycache__
 .env
 .git
+.gitignore
+Dockerfile
+.dockerignore
 metadata.json
 *.pyc
 .DS_Store
 __MACOSX
+npm-debug.log*
